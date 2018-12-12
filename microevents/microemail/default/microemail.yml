@@ -2,6 +2,11 @@ spring:
   kafka:
     consumer:
       group-id: microemail_consumer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: 'net.rhm.*'
   h2:
     console:
       enabled: true
