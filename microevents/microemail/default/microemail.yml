@@ -6,7 +6,7 @@ spring:
         spring:
           json:
             trusted:
-              packages: *
+              packages: net.rhm
   h2:
     console:
       enabled: true
