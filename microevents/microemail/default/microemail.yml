@@ -3,11 +3,7 @@ spring:
     consumer:
       group-id: microemail_consumer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring:
-          json:
-            trusted:
-              packages: '*'
+
   h2:
     console:
       enabled: true
