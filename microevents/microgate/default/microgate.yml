@@ -1,0 +1,3 @@
+zuul:
+  routes:
+    microuser: /api/user/**
