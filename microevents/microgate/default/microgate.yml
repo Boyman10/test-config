@@ -1,3 +1,10 @@
 zuul:
   routes:
     microuser: /api/user/**
+
+keycloak:
+  auth-server-url: http://127.0.0.1:8081/auth/
+  resource: micro-app
+  realm: demo
+  public-client: true
+  principal-attribute: bill
