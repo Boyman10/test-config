@@ -2,8 +2,19 @@ zuul:
   routes:
     microuser: /api/user/**
 
-keycloak:
-  auth-server-url: http://127.0.0.1:8180/auth/
-  resource: micro-app
-  realm: demo
-  public-client: true
+security:
+  basic:
+    enabled: false
+  oauth2:
+    sso:
+      loginPath: /login
+    client:
+      accessTokenUri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/token
+      userAuthorizationUri: /authorization-server-1/oauth/authorize
+      clientId: micro-app
+      clientSecret: fooSecret
+    resource:
+      jwt:
+        keyValue: "abc"
+      id: fooScope
+      serviceId: ${PREFIX:}resource
