@@ -2,19 +2,25 @@ zuul:
   routes:
     microuser: /api/user/**
 
-security:
-  basic:
-    enabled: false
-  oauth2:
-    sso:
-      loginPath: /login
-    client:
-      accessTokenUri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/token
-      userAuthorizationUri: /authorization-server-1/oauth/authorize
-      clientId: micro-app
-      clientSecret: fooSecret
-    resource:
-      jwt:
-        keyValue: "abc"
-      id: fooScope
-      serviceId: ${PREFIX:}resource
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: micro-app
+            client-secret: microapp
+            clientName: Keycloak
+            authorization-grant-type: authorization_code
+            redirectUriTemplate: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          keycloak:
+            authorization-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/auth
+            token-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/token
+            user-info-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/certs
+            user-name-attribute: preferred_username
