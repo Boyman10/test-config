@@ -5,21 +5,12 @@ zuul:
 security:
   oauth2:
     client:
-      registration:
-        keycloak:
-          client-id: micro-app
-          client-secret: microapp
-          clientName: Keycloak
-          authorization-grant-type: authorization_code
-          redirectUriTemplate: '{baseUrl}/login/oauth2/code/{registrationId}'
-          scope:
-            - openid
-            - profile
-            - email
-      provider:
-        keycloak:
-          authorization-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/auth
-          token-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/token
-          user-info-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/userinfo
-          jwk-set-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/certs
-          user-name-attribute: preferred_username
+      clientId: micro-app
+      clientSecret: eedca3b1-7170-402c-994f-370fa41445d6
+      accessTokenUri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/token
+      userAuthorizationUri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/auth
+      token-name: access_token
+      authenticationScheme: header
+      clientAuthenticationScheme: header
+    resource:
+      userInfoUri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/userinfo
