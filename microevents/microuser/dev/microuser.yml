@@ -11,6 +11,16 @@ spring:
     bootstrap-servers: 192.168.99.100:32770
     topic:
       userCreated: USER_CREATED_TOPIC
+
 security:
-  basic:
-    enabled: false
+  oauth2:
+    client:
+      clientId: micro-app
+      clientSecret: eedca3b1-7170-402c-994f-370fa41445d6
+      accessTokenUri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/token
+      userAuthorizationUri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/auth
+      token-name: access_token
+      authenticationScheme: header
+      clientAuthenticationScheme: header
+    resource:
+      userInfoUri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/userinfo
