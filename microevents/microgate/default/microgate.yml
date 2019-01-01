@@ -4,4 +4,4 @@ zuul:
     microuser:
       path: /api/user/**
       stripPrefix: false
-  sensitiveHeaders: Cookie,Set-Cookie
+      sensitiveHeaders: Cookie,Set-Cookie
