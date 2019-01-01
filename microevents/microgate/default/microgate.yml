@@ -1,7 +1,10 @@
 zuul:
+  ignoredServices: '*'
   routes:
-    microuser: /api/user/**
-  sensitive-headers: Cookie,Set-Cookie
+    microuser:
+      path: /api/user/**
+      stripPrefix: false
+      sensitiveHeaders:
 
 security:
   oauth2:
