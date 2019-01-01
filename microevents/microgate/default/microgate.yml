@@ -4,7 +4,7 @@ zuul:
     microuser:
       path: /api/user/**
       stripPrefix: false
-      sensitiveHeaders:
+      sensitiveHeaders: Cookie,Set-Cookie
 
 security:
   oauth2:
