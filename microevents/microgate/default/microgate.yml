@@ -1,5 +1,4 @@
 zuul:
-  ignoredServices: '*'
   routes:
     microuser:
       path: /api/user/**
