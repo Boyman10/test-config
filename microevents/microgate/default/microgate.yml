@@ -1,5 +1,5 @@
 zuul:
-  sensitiveHeaders: Cookie,Set-Cookie
+  ignoredServices: '*'
   routes:
     microuser:
       path: /api/user/**
