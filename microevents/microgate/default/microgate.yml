@@ -4,5 +4,6 @@ zuul:
   routes:
     microuser:
       path: /user/**
+      serviceId: microuser
       stripPrefix: false
 
