@@ -24,3 +24,5 @@ security:
       clientAuthenticationScheme: header
     resource:
       userInfoUri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/userinfo
+
+test-config.str: test8
