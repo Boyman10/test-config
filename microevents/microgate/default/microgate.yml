@@ -1,6 +1,7 @@
 zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
   routes:
     microuser:
       path: /api/user/**
       stripPrefix: false
-      sensitiveHeaders: Cookie,Set-Cookie
+
